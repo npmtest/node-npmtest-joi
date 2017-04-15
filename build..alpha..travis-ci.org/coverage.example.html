@@ -1,4 +1,6 @@
-<html lang="en"><head>
+<!doctype html>
+<html lang="en">
+<head>
     <title>Code coverage report for node-npmtest-joi/joi/lib/number.js</title>
     <meta charset="utf-8">
     <style>
@@ -208,11 +210,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> » <a href="index.html">node-npmtest-joi/joi/lib/</a> » number.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-joi/joi/lib/</a> &#187; number.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tbody><tr><td class="line-count">1
+<tr><td class="line-count">1
 2
 3
 4
@@ -586,108 +588,108 @@ internals.Number = class extends Any {
         this._invalids.add(-Infinity);
     }
 &nbsp;
-    _base<span class="fstat-no" title="function not covered">(value, state, options) {</span>
+    _base<span class="fstat-no" title="function not covered" >(value, state, options) {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        const result = {</span>
+<span class="cstat-no" title="statement not covered" >        const result = {</span>
             errors: null,
             value
         };
 &nbsp;
-<span class="cstat-no" title="statement not covered">        if (typeof value === 'string' &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >        if (typeof value === 'string' &amp;&amp;</span>
             options.convert) {
 &nbsp;
-<span class="cstat-no" title="statement not covered">            const number = parseFloat(value);</span>
-<span class="cstat-no" title="statement not covered">            result.value = (isNaN(number) || !isFinite(value)) ? NaN : number;</span>
+<span class="cstat-no" title="statement not covered" >            const number = parseFloat(value);</span>
+<span class="cstat-no" title="statement not covered" >            result.value = (isNaN(number) || !isFinite(value)) ? NaN : number;</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered">        const isNumber = typeof result.value === 'number' &amp;&amp; !isNaN(result.value);</span>
+<span class="cstat-no" title="statement not covered" >        const isNumber = typeof result.value === 'number' &amp;&amp; !isNaN(result.value);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        if (options.convert &amp;&amp; 'precision' in this._flags &amp;&amp; isNumber) {</span>
+<span class="cstat-no" title="statement not covered" >        if (options.convert &amp;&amp; 'precision' in this._flags &amp;&amp; isNumber) {</span>
 &nbsp;
             // This is conceptually equivalent to using toFixed but it should be much faster
-<span class="cstat-no" title="statement not covered">            const precision = Math.pow(10, this._flags.precision);</span>
-<span class="cstat-no" title="statement not covered">            result.value = Math.round(result.value * precision) / precision;</span>
+<span class="cstat-no" title="statement not covered" >            const precision = Math.pow(10, this._flags.precision);</span>
+<span class="cstat-no" title="statement not covered" >            result.value = Math.round(result.value * precision) / precision;</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered">        result.errors = isNumber ? null : this.createError('number.base', null, state, options);</span>
-<span class="cstat-no" title="statement not covered">        return result;</span>
+<span class="cstat-no" title="statement not covered" >        result.errors = isNumber ? null : this.createError('number.base', null, state, options);</span>
+<span class="cstat-no" title="statement not covered" >        return result;</span>
     }
 &nbsp;
-    multiple<span class="fstat-no" title="function not covered">(base) {</span>
+    multiple<span class="fstat-no" title="function not covered" >(base) {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        const isRef = Ref.isRef(base);</span>
+<span class="cstat-no" title="statement not covered" >        const isRef = Ref.isRef(base);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        if (!isRef) {</span>
-<span class="cstat-no" title="statement not covered">            Hoek.assert(typeof base === 'number' &amp;&amp; isFinite(base), 'multiple must be a number');</span>
-<span class="cstat-no" title="statement not covered">            Hoek.assert(base &gt; 0, 'multiple must be greater than 0');</span>
+<span class="cstat-no" title="statement not covered" >        if (!isRef) {</span>
+<span class="cstat-no" title="statement not covered" >            Hoek.assert(typeof base === 'number' &amp;&amp; isFinite(base), 'multiple must be a number');</span>
+<span class="cstat-no" title="statement not covered" >            Hoek.assert(base &gt; 0, 'multiple must be greater than 0');</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered">        return this._test('multiple', base, <span class="fstat-no" title="function not covered">function (value, state, options) {</span></span>
+<span class="cstat-no" title="statement not covered" >        return this._test('multiple', base, <span class="fstat-no" title="function not covered" >function (value, state, options) {</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">            const divisor = isRef ? base(state.reference || state.parent, options) : base;</span>
+<span class="cstat-no" title="statement not covered" >            const divisor = isRef ? base(state.reference || state.parent, options) : base;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">            if (isRef &amp;&amp; (typeof divisor !== 'number' || !isFinite(divisor))) {</span>
-<span class="cstat-no" title="statement not covered">                return this.createError('number.ref', { ref: base.key }, state, options);</span>
+<span class="cstat-no" title="statement not covered" >            if (isRef &amp;&amp; (typeof divisor !== 'number' || !isFinite(divisor))) {</span>
+<span class="cstat-no" title="statement not covered" >                return this.createError('number.ref', { ref: base.key }, state, options);</span>
             }
 &nbsp;
-<span class="cstat-no" title="statement not covered">            if (value % divisor === 0) {</span>
-<span class="cstat-no" title="statement not covered">                return value;</span>
+<span class="cstat-no" title="statement not covered" >            if (value % divisor === 0) {</span>
+<span class="cstat-no" title="statement not covered" >                return value;</span>
             }
 &nbsp;
-<span class="cstat-no" title="statement not covered">            return this.createError('number.multiple', { multiple: base, value }, state, options);</span>
+<span class="cstat-no" title="statement not covered" >            return this.createError('number.multiple', { multiple: base, value }, state, options);</span>
         });
     }
 &nbsp;
-    integer<span class="fstat-no" title="function not covered">() {</span>
+    integer<span class="fstat-no" title="function not covered" >() {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        return this._test('integer', undefined, <span class="fstat-no" title="function not covered">function (value, state, options) {</span></span>
+<span class="cstat-no" title="statement not covered" >        return this._test('integer', undefined, <span class="fstat-no" title="function not covered" >function (value, state, options) {</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">            return Number.isSafeInteger(value) ? value : this.createError('number.integer', { value }, state, options);</span>
+<span class="cstat-no" title="statement not covered" >            return Number.isSafeInteger(value) ? value : this.createError('number.integer', { value }, state, options);</span>
         });
     }
 &nbsp;
-    negative<span class="fstat-no" title="function not covered">() {</span>
+    negative<span class="fstat-no" title="function not covered" >() {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        return this._test('negative', undefined, <span class="fstat-no" title="function not covered">function (value, state, options) {</span></span>
+<span class="cstat-no" title="statement not covered" >        return this._test('negative', undefined, <span class="fstat-no" title="function not covered" >function (value, state, options) {</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">            if (value &lt; 0) {</span>
-<span class="cstat-no" title="statement not covered">                return value;</span>
+<span class="cstat-no" title="statement not covered" >            if (value &lt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                return value;</span>
             }
 &nbsp;
-<span class="cstat-no" title="statement not covered">            return this.createError('number.negative', { value }, state, options);</span>
+<span class="cstat-no" title="statement not covered" >            return this.createError('number.negative', { value }, state, options);</span>
         });
     }
 &nbsp;
-    positive<span class="fstat-no" title="function not covered">() {</span>
+    positive<span class="fstat-no" title="function not covered" >() {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        return this._test('positive', undefined, <span class="fstat-no" title="function not covered">function (value, state, options) {</span></span>
+<span class="cstat-no" title="statement not covered" >        return this._test('positive', undefined, <span class="fstat-no" title="function not covered" >function (value, state, options) {</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">            if (value &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered">                return value;</span>
+<span class="cstat-no" title="statement not covered" >            if (value &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                return value;</span>
             }
 &nbsp;
-<span class="cstat-no" title="statement not covered">            return this.createError('number.positive', { value }, state, options);</span>
+<span class="cstat-no" title="statement not covered" >            return this.createError('number.positive', { value }, state, options);</span>
         });
     }
 &nbsp;
-    precision<span class="fstat-no" title="function not covered">(limit) {</span>
+    precision<span class="fstat-no" title="function not covered" >(limit) {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        Hoek.assert(Hoek.isInteger(limit), 'limit must be an integer');</span>
-<span class="cstat-no" title="statement not covered">        Hoek.assert(!('precision' in this._flags), 'precision already set');</span>
+<span class="cstat-no" title="statement not covered" >        Hoek.assert(Hoek.isInteger(limit), 'limit must be an integer');</span>
+<span class="cstat-no" title="statement not covered" >        Hoek.assert(!('precision' in this._flags), 'precision already set');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        const obj = this._test('precision', limit, <span class="fstat-no" title="function not covered">function (value, state, options) {</span></span>
+<span class="cstat-no" title="statement not covered" >        const obj = this._test('precision', limit, <span class="fstat-no" title="function not covered" >function (value, state, options) {</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">            const places = value.toString().match(internals.precisionRx);</span>
-<span class="cstat-no" title="statement not covered">            const decimals = Math.max((places[1] ? places[1].length : 0) - (places[2] ? parseInt(places[2], 10) : 0), 0);</span>
-<span class="cstat-no" title="statement not covered">            if (decimals &lt;= limit) {</span>
-<span class="cstat-no" title="statement not covered">                return value;</span>
+<span class="cstat-no" title="statement not covered" >            const places = value.toString().match(internals.precisionRx);</span>
+<span class="cstat-no" title="statement not covered" >            const decimals = Math.max((places[1] ? places[1].length : 0) - (places[2] ? parseInt(places[2], 10) : 0), 0);</span>
+<span class="cstat-no" title="statement not covered" >            if (decimals &lt;= limit) {</span>
+<span class="cstat-no" title="statement not covered" >                return value;</span>
             }
 &nbsp;
-<span class="cstat-no" title="statement not covered">            return this.createError('number.precision', { limit, value }, state, options);</span>
+<span class="cstat-no" title="statement not covered" >            return this.createError('number.precision', { limit, value }, state, options);</span>
         });
 &nbsp;
-<span class="cstat-no" title="statement not covered">        obj._flags.precision = limit;</span>
-<span class="cstat-no" title="statement not covered">        return obj;</span>
+<span class="cstat-no" title="statement not covered" >        obj._flags.precision = limit;</span>
+<span class="cstat-no" title="statement not covered" >        return obj;</span>
     }
 &nbsp;
 };
@@ -695,51 +697,50 @@ internals.Number = class extends Any {
 &nbsp;
 internals.compare = function (type, compare) {
 &nbsp;
-    return <span class="fstat-no" title="function not covered">function (limit) {</span>
+    return <span class="fstat-no" title="function not covered" >function (limit) {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        const isRef = Ref.isRef(limit);</span>
-<span class="cstat-no" title="statement not covered">        const isNumber = typeof limit === 'number' &amp;&amp; !isNaN(limit);</span>
+<span class="cstat-no" title="statement not covered" >        const isRef = Ref.isRef(limit);</span>
+<span class="cstat-no" title="statement not covered" >        const isNumber = typeof limit === 'number' &amp;&amp; !isNaN(limit);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        Hoek.assert(isNumber || isRef, 'limit must be a number or reference');</span>
+<span class="cstat-no" title="statement not covered" >        Hoek.assert(isNumber || isRef, 'limit must be a number or reference');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        return this._test(type, limit, <span class="fstat-no" title="function not covered">function (value, state, options) {</span></span>
+<span class="cstat-no" title="statement not covered" >        return this._test(type, limit, <span class="fstat-no" title="function not covered" >function (value, state, options) {</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">            let compareTo;</span>
-<span class="cstat-no" title="statement not covered">            if (isRef) {</span>
-<span class="cstat-no" title="statement not covered">                compareTo = limit(state.reference || state.parent, options);</span>
+<span class="cstat-no" title="statement not covered" >            let compareTo;</span>
+<span class="cstat-no" title="statement not covered" >            if (isRef) {</span>
+<span class="cstat-no" title="statement not covered" >                compareTo = limit(state.reference || state.parent, options);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">                if (!(typeof compareTo === 'number' &amp;&amp; !isNaN(compareTo))) {</span>
-<span class="cstat-no" title="statement not covered">                    return this.createError('number.ref', { ref: limit.key }, state, options);</span>
+<span class="cstat-no" title="statement not covered" >                if (!(typeof compareTo === 'number' &amp;&amp; !isNaN(compareTo))) {</span>
+<span class="cstat-no" title="statement not covered" >                    return this.createError('number.ref', { ref: limit.key }, state, options);</span>
                 }
             }
             else {
-<span class="cstat-no" title="statement not covered">                compareTo = limit;</span>
+<span class="cstat-no" title="statement not covered" >                compareTo = limit;</span>
             }
 &nbsp;
-<span class="cstat-no" title="statement not covered">            if (compare(value, compareTo)) {</span>
-<span class="cstat-no" title="statement not covered">                return value;</span>
+<span class="cstat-no" title="statement not covered" >            if (compare(value, compareTo)) {</span>
+<span class="cstat-no" title="statement not covered" >                return value;</span>
             }
 &nbsp;
-<span class="cstat-no" title="statement not covered">            return this.createError('number.' + type, { limit: compareTo, value }, state, options);</span>
+<span class="cstat-no" title="statement not covered" >            return this.createError('number.' + type, { limit: compareTo, value }, state, options);</span>
         });
     };
 };
 &nbsp;
 &nbsp;
-internals.Number.prototype.min = internals.compare('min', (value, limit) =&gt; <span class="cstat-no" title="statement not covered">value &gt;= limit)</span>;
-internals.Number.prototype.max = internals.compare('max', (value, limit) =&gt; <span class="cstat-no" title="statement not covered">value &lt;= limit)</span>;
-internals.Number.prototype.greater = internals.compare('greater', (value, limit) =&gt; <span class="cstat-no" title="statement not covered">value &gt; limit)</span>;
-internals.Number.prototype.less = internals.compare('less', (value, limit) =&gt; <span class="cstat-no" title="statement not covered">value &lt; limit)</span>;
+internals.Number.prototype.min = internals.compare('min', (value, limit) =&gt; <span class="cstat-no" title="statement not covered" >value &gt;= limit)</span>;
+internals.Number.prototype.max = internals.compare('max', (value, limit) =&gt; <span class="cstat-no" title="statement not covered" >value &lt;= limit)</span>;
+internals.Number.prototype.greater = internals.compare('greater', (value, limit) =&gt; <span class="cstat-no" title="statement not covered" >value &gt; limit)</span>;
+internals.Number.prototype.less = internals.compare('less', (value, limit) =&gt; <span class="cstat-no" title="statement not covered" >value &lt; limit)</span>;
 &nbsp;
 &nbsp;
 module.exports = new internals.Number();
 &nbsp;
 &nbsp;</pre></td></tr>
-</tbody></table></pre>
+</table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 06:08:08 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Sat Apr 15 2017 22:14:10 GMT+0000 (UTC)</div>
 </div>
-
-
-</body></html>
+</body>
+</html>
