@@ -1,6 +1,6 @@
 # npmtest-joi
 
-#### test coverage for  [joi (v10.4.1)](https://github.com/hapijs/joi)  [![npm package](https://img.shields.io/npm/v/npmtest-joi.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-joi) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-joi.svg)](https://travis-ci.org/npmtest/node-npmtest-joi)
+#### basic test coverage for  [joi (v10.4.1)](https://github.com/hapijs/joi)  [![npm package](https://img.shields.io/npm/v/npmtest-joi.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-joi) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-joi.svg)](https://travis-ci.org/npmtest/node-npmtest-joi)
 
 #### Object schema validation
 
@@ -10,7 +10,7 @@
 |--:|:--|
 | coverage : | [![istanbul-coverage](https://npmtest.github.io/node-npmtest-joi/build/coverage.badge.svg)](https://npmtest.github.io/node-npmtest-joi/build/coverage.html/index.html)|
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-joi/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-joi/build/test-report.html)|
-| build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-joi/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-joi/tree/gh-pages/build)|
+| test-server-github : | [![github.com test-server](https://npmtest.github.io/node-npmtest-joi/GitHub-Mark-32px.png)](https://npmtest.github.io/node-npmtest-joi/build/app/index.html) | | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-joi/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-joi/tree/gh-pages/build)|
 
 - [https://npmtest.github.io/node-npmtest-joi/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-joi/build/coverage.html/index.html)
 
@@ -94,7 +94,8 @@
         "toc": "hapitoc",
         "version": "npm run toc && git add API.md README.md"
     },
-    "version": "10.4.1"
+    "version": "10.4.1",
+    "bin": {}
 }
 ```
 
